@@ -30,7 +30,7 @@ indicator-color='rgba(255, 255, 255, .3)' indicator-active-color='#ffffff'>
   <!-- 首页楼层 -->
   <view class='floor'>
      <view class='floor_title'>
-        厅3334444
+        楼层
      </view>
       <view class='floor_content'></view>
   </view>
