@@ -7,7 +7,9 @@ Page({
     //1.0 轮播图数组
     swiper:[],
     //2.0 分类菜单数组
-    cate:[]
+    cate:[],
+    //3.0楼层总数据数组
+    floorData:[]
     
   },
 
@@ -17,9 +19,10 @@ Page({
   onLoad: function (options) {
     // 1.1调用轮播图接口 
     this.getSliderData(),
-    //2.1 调用分类菜单乐请求
-      this.getCateMenu()
-      
+    //2.1 调用分类菜单乐请求接口
+    this.getCateMenu()
+    //3.1调用获取首页楼层数据的请求接口
+    this.getFloorData()
   },
 
   //1.0 封装轮播图请求
@@ -60,9 +63,19 @@ Page({
 
    //3.0封装获取首页楼层数据的请求
    getFloorData(){
-     wx:request({
+     wx.request({
        url:"https://api.zbztb.cn/api/public/v1/home/floordata",
-       method: "get"
+       method: "get",
+       success:res=>{
+         //解构返回数据
+         const {message} = res.data;
+         //楼层数据赋值必须使用setData()
+         this.setData({
+           floorData :message
+         })
+         
+
+       }
 
      })
    },

@@ -1,36 +1,45 @@
-<!-- 使用搜索框组件 -->
+<!-- 1.0使用搜索框组件 -->
 <Search></Search>
 
-<!-- 轮播图 -->
-<swiper class='swiper' 
-indicator-dots
-autoplay="true" 
-interval="5000" 
-duration="1500" 
-circular="true"
-indicator-color='rgba(255, 255, 255, .3)' indicator-active-color='#ffffff'>
-   <!-- 遍历轮播图 -->
-   <block class='swiper_item'>
-      <swiper-item wx:for='{{swiper}}' wx:key='goods_id'>
-        <image class='swiper_image' src='{{item.image_src}}'></image>
-      </swiper-item>
-   </block>
+<!-- 2.0轮播图 -->
+<swiper class='swiper' indicator-dots autoplay="true" interval="5000" duration="1500" circular="true" indicator-color='rgba(255, 255, 255, .3)' indicator-active-color='#ffffff'>
+  <!-- 遍历轮播图 -->
+  <block class='swiper_item'>
+    <swiper-item wx:for='{{swiper}}' wx:key='goods_id'>
+      <image class='swiper_image' src='{{item.image_src}}'></image>
+    </swiper-item>
+  </block>
 </swiper>
 
-<!-- 分类菜单 -->
+<!-- 3.0分类菜单 -->
 <view class="cate">
-   <block wx:for='{{cate}}' wx:key="{{name}}">
-       <view class='cate_item'>
-          <image src="{{item.image_src}}" class="cate_image">
+  <block wx:for='{{cate}}' wx:key="{{name}}">
+    <view class='cate_item'>
+      <image src="{{item.image_src}}" class="cate_image">
+      </image>
+    </view>
+  </block>
+</view>
+
+<!-- 4.0首页楼层 -->
+<view class='floor'>
+  <!-- 第一次遍历 -->
+  <block wx:for="{{floorData}}" :key='index'>
+      <!-- 楼层标题 -->
+      <view class='floor_title'>
+        <image src="{{item.floor_title.image_src}}" class="floor_title_image">
           </image>
-        </view>
+      </view>
+      <!-- 楼层内容 -->
+      <view class='floor_content'>
+          <view class="floor_left">
+            <image src="{{item.product_list[0].image_src}}" class="floor_left_image"></image>
+          </view>
+          <view class="floor_right">
+             <block wx:for="{{item.product_list}}" :key="name" wx:for-item="item2" wx:for-index="index2">
+               <image wx:if="{{index2>0}}" src="{{item2.image_src}}" class="floor_right_image"></image>
+             </block>
+          </view>
+      </view>
    </block>
 </view>
- 
-  <!-- 首页楼层 -->
-  <view class='floor'>
-     <view class='floor_title'>
-        楼层
-     </view>
-      <view class='floor_content'></view>
-  </view>
