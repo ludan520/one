@@ -9,7 +9,9 @@ Page({
     //2.0 分类菜单数组
     cate:[],
     //3.0楼层总数据数组
-    floorData:[]
+    floorData:[],
+    //4.0是否显示返回顶部
+     showTop:true
     
   },
 
@@ -77,6 +79,19 @@ Page({
 
        }
 
+     })
+   },
+  
+   //4.0返回顶部事件处理函数
+   goTop(event){
+      console.log(event);
+     const { top } = event.currentTarget.dataset;
+     //实现返回顶部效果
+     //将页面滚动到目标位置，支持选择器和滚动距离两种方式定位
+     wx.pageScrollTo({
+      //scrollTop滚动到页面的目标位置
+       scrollTop:top,
+       duration:300
      })
    },
 

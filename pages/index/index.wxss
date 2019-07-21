@@ -60,3 +60,29 @@ swiper,
    margin-left: 15rpx;
    
  }
+
+
+/* 5.0回到顶部 */
+.goTop{
+  display: flex;
+  flex-direction: column;
+  border-radius: 50%;
+  background:rgba(248, 241, 241,.7);
+  width: 100rpx;
+  height: 100rpx;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  bottom: 50rpx;
+}
+.goTop_image{
+  width: 40rpx;
+  height: 50rpx;
+}
+   .goTop_text{
+     font-size: 18rpx;
+     color: #908e8d;
+     font-weight: 700;
+
+   }

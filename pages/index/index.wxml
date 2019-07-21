@@ -24,7 +24,7 @@
 <!-- 4.0首页楼层 -->
 <view class='floor'>
   <!-- 第一次遍历 -->
-  <block wx:for="{{floorData}}" :key='index'>
+  <block wx:for="{{floorData}}" wx:key='index'>
       <!-- 楼层标题 -->
       <view class='floor_title'>
         <image src="{{item.floor_title.image_src}}" class="floor_title_image">
@@ -36,10 +36,20 @@
             <image src="{{item.product_list[0].image_src}}" class="floor_left_image"></image>
           </view>
           <view class="floor_right">
-             <block wx:for="{{item.product_list}}" :key="name" wx:for-item="item2" wx:for-index="index2">
+          <!-- wx:for-item重命名数组每项值  wx:for-index重命名数组每项key-->
+             <block wx:for="{{item.product_list}}" wx:key="name" wx:for-item="item2" wx:for-index="index2">
                <image wx:if="{{index2>0}}" src="{{item2.image_src}}" class="floor_right_image"></image>
              </block>
           </view>
       </view>
    </block>
+</view>
+
+<!-- 5.0回到顶部 -->
+<!-- hidden 是否隐藏返回顶部盒子 -->
+<!-- bindtap="goTop"    绑定事件 -->
+<!-- data-top="{{ 0 }}" 事件参数传递 -->
+<view class="goTop" hidden="{{!showTop}}" bindtap="goTop" data-top='{{0}}'>
+    <image src="../../images/返回顶部1.png" class="goTop_image"></image>
+    <text class="goTop_text">顶部</text>
 </view>
