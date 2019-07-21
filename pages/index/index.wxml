@@ -49,7 +49,7 @@
 <!-- hidden 是否隐藏返回顶部盒子 -->
 <!-- bindtap="goTop"    绑定事件 -->
 <!-- data-top="{{ 0 }}" 事件参数传递 -->
-<view class="goTop" hidden="{{!showTop}}" bindtap="goTop" data-top='{{0}}'>
+<view class="goTop" hidden="{{showTop}}" bindtap="goTop" data-top='{{0}}'>
     <image src="../../images/返回顶部1.png" class="goTop_image"></image>
     <text class="goTop_text">顶部</text>
 </view>

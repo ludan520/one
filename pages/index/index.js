@@ -36,7 +36,7 @@ Page({
       success:res=>{
          //解构返回的轮播图数据
          const {message} = res.data;
-         //使用setData修改数据(赋值)
+         //使用setData修改数据(赋值); 通过 setData方法更新数据和视图。
         this.setData({
           swiper:message
         })
@@ -84,16 +84,37 @@ Page({
   
    //4.0返回顶部事件处理函数
    goTop(event){
-      console.log(event);
+      // console.log(event);
+      //通过event获取data-自定义的参数
      const { top } = event.currentTarget.dataset;
      //实现返回顶部效果
      //将页面滚动到目标位置，支持选择器和滚动距离两种方式定位
      wx.pageScrollTo({
-      //scrollTop滚动到页面的目标位置
+      //scrollTop 滚动到页面的目标位置
        scrollTop:top,
        duration:300
      })
    },
+
+   //5.0页面滚动触发的事件
+   onPageScroll(event){
+      // console.log(event);
+      //获取页面滚动到目标位置的垂直距离
+     const {scrollTop} =event;
+     //当页面滚动后的垂直距离大于200，返回顶部标志出现
+     if(scrollTop >200){
+        this.setData({
+          showTop: false
+        })
+     }else{
+       this.setData({
+         showTop: true
+       })
+     }
+
+   },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
