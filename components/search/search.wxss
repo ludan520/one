@@ -1,4 +1,5 @@
-/* components/components.wxss */
+/* components/search/search.wxss */
+/* 1.0 搜索框 */
 .search{
     padding:10px;
     background-color: #ff2b49

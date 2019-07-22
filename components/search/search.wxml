@@ -1,10 +1,9 @@
-<!--components/components.wxml-->
-<!-- 搜索框 -->
+
+<!-- 1.0搜索框 -->
 <view class='search'>
    <view class="search-content">
       <icon class="search-icon" type="search"  size="23"></icon>
       <text class="search-text">搜索</text>
    </view>
 </view>
-
 
