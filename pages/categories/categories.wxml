@@ -1,2 +1,2 @@
-<!--pages/categories/categories.wxml-->
-<text>5455</text>
+<!-- 1.0 使用搜索框组件 -->
+<Search/>

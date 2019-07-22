@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "Search":"/components/components"
+    "Search":"/components/search/search"
   }
 }
