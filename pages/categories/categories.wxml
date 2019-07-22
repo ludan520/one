@@ -1,2 +1,12 @@
 <!-- 1.0 使用搜索框组件 -->
 <Search/>
+
+<!-- 2.0 分类页面内容 -->
+<view class="cate">
+   <!-- 分类内容左边 -->
+   <view class="cate_left">
+     左边
+   </view>
+   <!-- 分类内容右边 -->
+   <view class="cate_right">右边</view>
+</view>

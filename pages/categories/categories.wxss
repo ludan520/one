@@ -1,1 +1,24 @@
-/* pages/categories/categories.wxss */
+/* 1.0搜索框组件 */
+
+/* 2.0 分类页面内容  */
+.cate{
+  display: flex;
+  /* 定位属性（盒子没有设置宽高，通过定位拉伸出盒子的宽高） */
+  position: absolute;
+  /* 拉伸出盒子高度，top预留搜索框位置 */
+  top:110rpx;
+  bottom: 0;
+  /* 拉伸出盒子宽 */
+  left: 0;
+  right: 0;
+  
+}
+.cate_left{
+  width: 140rpx;
+  background-color: yellow;
+}
+.cate_right{
+  /* 使用一行剩余宽度 */
+  flex:1;
+  background-color: pink
+}
