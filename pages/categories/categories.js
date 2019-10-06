@@ -39,12 +39,14 @@ Page({
       console.log(this.data.classify)
     })
   },
-  //点击分类左侧切换选项卡
+  //点击分类左侧切换选项卡,获取当前索引，并根据索引动态渲染列表右侧数据
   changeTab(event){
     const { index } = event.currentTarget.dataset
     //更新数据
     this.setData({
-      activeIndex:index
+      activeIndex:index,
+      subClassify: this.data.classify[index].children
+
     })
     console.log(this.data.activeIndex)
   },
