@@ -29,7 +29,7 @@
 }
 .cate_right_title{
   text-align: center;
-  margin:50rpx 0;
+  margin-top:50rpx;
 }
 .cate_right_title::before,.cate_right_title::after{
   content:"/";
@@ -43,12 +43,12 @@
 .cate_right_item{
   width: 33.33%;
   text-align: center;
-  margin:30rpx 0; 
+  margin-top:30rpx; 
   font-size: 14px;
 }
 .cate_right_item_image{
-  width: 60rpx;
-  height: 60rpx;
+  width: 120rpx;
+  height: 120rpx;
   margin-bottom: 10rpx;
 }
 /* .cate_right_item_name{

@@ -8,20 +8,24 @@
    <scroll-view scroll-y class="cate_left">
       <block wx:for='{{classify}}' wx:key="cat_id">
       <!-- 类名切换，三元表达式：条件 ? 成立执行 : 不成立执行 -->
-        <view class="cate_left_text  {{index === activeIndex ? 'active' :''}}">{{item.cat_name}}</view>
+        <view 
+          class="cate_left_text  {{index === activeIndex ? 'active' :''}}" 
+          bindtap="changeTab" 
+          data-index='{{index}}'
+        >{{item.cat_name}}</view>
       </block>
    </scroll-view>
    <!-- 分类内容右边 -->
    <scroll-view  scroll-y class="cate_right">
      <!-- 第一层循环 -->
-     <block wx:for="{{1}}" wx:key='cat_id'>
-        <view class="cate_right_title">电视</view>
+     <block wx:for="{{subClassify}}" wx:key='cat_id'>
+        <view class="cate_right_title">{{item.cat_name}}</view>
         <view class="cate_right_list">
            <!-- 第二层循环 -->
-           <block wx:for="{{20}}" wx:key='' wx:for-item="item2" wx:for-index="index2">
+           <block wx:for="{{item.children}}" wx:key='cat_id' wx:for-item="item2" wx:key-index="index2">
               <view class="cate_right_item">
-                 <image class="cate_right_item_image" src="/images/cart1.png"></image>
-                 <view class="cate_right_item_name">曲面电视</view>
+                 <image class="cate_right_item_image" src="{{item2.cat_icon}}"></image>
+                 <view class="cate_right_item_name">{{item2.cat_name}}</view>
               </view>
            </block>
         </view>

@@ -33,10 +33,20 @@ Page({
       url:"categories"
     }).then(res=>{
       this.setData({
-        classify:res
+        classify:res,
+        subClassify: res[this.data.activeIndex].children
       })
       console.log(this.data.classify)
     })
+  },
+  //点击分类左侧切换选项卡
+  changeTab(event){
+    const { index } = event.currentTarget.dataset
+    //更新数据
+    this.setData({
+      activeIndex:index
+    })
+    console.log(this.data.activeIndex)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
