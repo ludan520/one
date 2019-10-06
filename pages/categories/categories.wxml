@@ -6,9 +6,9 @@
    <!-- 分类内容左边 -->
    <!-- scroll-view可滚动视图区域;scroll-y允许纵向滚动，调用该属性时默认值变为true -->
    <scroll-view scroll-y class="cate_left">
-      <block wx:for='{{22}}' wx:key="">
+      <block wx:for='{{classify}}' wx:key="cat_id">
       <!-- 类名切换，三元表达式：条件 ? 成立执行 : 不成立执行 -->
-        <view class="cate_left_text  {{index === activeIndex ? 'active' :''}}">大家电</view>
+        <view class="cate_left_text  {{index === activeIndex ? 'active' :''}}">{{item.cat_name}}</view>
       </block>
    </scroll-view>
    <!-- 分类内容右边 -->

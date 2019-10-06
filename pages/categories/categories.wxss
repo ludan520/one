@@ -17,13 +17,13 @@
 .cate_left{
   width: 200rpx;
   background-color: #f5f5f4;
+  flex-shrink: 0;
   /* overflow: auto样式的滚动条在部分机型上会出现卡顿，滑动不流畅  */
   /* overflow: auto; */
 }
 .cate_right{
   /* 使用一行剩余宽度 */
   flex:1;
-  background-color: pink;
   height: 100%;
   /* 部分机型上 scroll-view不加高度，无法实现局部滚动 */
 }
