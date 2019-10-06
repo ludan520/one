@@ -12,13 +12,77 @@
   left: 0;
   right: 0;
   
+  
 }
 .cate_left{
-  width: 140rpx;
-  background-color: yellow;
+  width: 200rpx;
+  background-color: #f5f5f4;
+  /* overflow: auto样式的滚动条在部分机型上会出现卡顿，滑动不流畅  */
+  /* overflow: auto; */
 }
 .cate_right{
   /* 使用一行剩余宽度 */
   flex:1;
-  background-color: pink
+  background-color: pink;
+  height: 100%;
+  /* 部分机型上 scroll-view不加高度，无法实现局部滚动 */
+}
+.cate_right_title{
+  text-align: center;
+  margin:50rpx 0;
+}
+.cate_right_title::before,.cate_right_title::after{
+  content:"/";
+  color:#ccc;
+  margin:0 30rpx;
+}
+.cate_right_list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.cate_right_item{
+  width: 33.33%;
+  text-align: center;
+  margin:30rpx 0; 
+  font-size: 14px;
+}
+.cate_right_item_image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 10rpx;
+}
+/* .cate_right_item_name{
+
+} */
+
+.cate_left_text{
+  border:1px solid  ccc;
+  text-align: center;
+  /* 行高在盒子有文字的情况下可以撑出盒子高度 */
+  line-height: 66rpx;
+  color: #4a4b4a;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 14px;
+  width: 200rpx;
+}
+/* 交集选择器两个类名没有空格，代表 .classify-left-item 和 .active 同时在同一个标签上 */
+/* active默认选中状态的样式 */
+.cate_left_text.active{
+  color:#ff2b49;
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* 通过伪元素画出来一个盒子 */
+.cate_left_text.active::before{
+  content: "";
+  width:7rpx;
+  background-color: #ff2b49;
+  position: absolute;
+  left:0;
+  top:10rpx;
+  bottom: 10rpx;
+  
+
 }
